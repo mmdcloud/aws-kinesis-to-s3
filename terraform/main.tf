@@ -70,7 +70,7 @@ resource "aws_iam_role_policy" "firehose_policy" {
 # Kinesis Firehose configuration
 resource "aws_kinesis_firehose_delivery_stream" "firehose_to_s3" {
   name        = "example-firehose-to-s3"
-  destination = "s3"
+  destination = "extended_s3"
 
   extended_s3_configuration {
     role_arn           = aws_iam_role.firehose_role.arn
