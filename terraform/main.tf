@@ -1,6 +1,6 @@
 # Creating a S3 bucket for storing the processe records
 resource "aws_s3_bucket" "kinesis_s3_bucket" {
-  bucket = "your-kinesis-data-bucket"
+  bucket = "theplayer007-kinesis"
 }
 
 # Creating kinesis data stream service
@@ -45,7 +45,6 @@ resource "aws_iam_role_policy" "firehose_policy" {
           "s3:PutObject"
         ]
         Resource = [
-          aws_s3_bucket.kinesis_s3_bucket.arn,
           "${aws_s3_bucket.kinesis_s3_bucket.arn}/*"
         ]
       },
@@ -57,7 +56,7 @@ resource "aws_iam_role_policy" "firehose_policy" {
           "kinesis:GetRecords",
           "kinesis:ListStreams"
         ]
-        Resource = aws_kinesis_stream.kinesis_stream.arn
+        Resource = "${aws_kinesis_stream.kinesis_stream.arn}"
       },
       {
         Effect   = "Allow"
@@ -69,8 +68,6 @@ resource "aws_iam_role_policy" "firehose_policy" {
 }
 
 # Kinesis Firehose configuration
-
-# firehose.tf
 resource "aws_kinesis_firehose_delivery_stream" "firehose_to_s3" {
   name        = "example-firehose-to-s3"
   destination = "s3"
