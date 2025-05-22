@@ -1,6 +1,6 @@
 # Creating a S3 bucket for storing the processe records
 resource "aws_s3_bucket" "kinesis_s3_bucket" {
-  bucket = "theplayer007-kinesis"
+  bucket = "madmax-kinesis"
 }
 
 # Creating kinesis data stream service
