@@ -1,7 +1,7 @@
 # Kinesis Data Pipeline
 
 [![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io/)
-[![AWS](https://img.shields.io/badge/aws-%234285F4.svg?style=for-the-badge&logo=aws&logoColor=white)](https://aws.amazon.com/)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 A scalable data streaming pipeline that ingests data through Amazon Kinesis Data Streams, processes it via Kinesis Data Firehose, and stores it in Amazon S3 for analytics and long-term storage.
 
