@@ -1,6 +1,7 @@
 # Creating a S3 bucket for storing the processe records
 resource "aws_s3_bucket" "kinesis_s3_bucket" {
   bucket = "madmax-kinesis"
+  force_destroy = true
 }
 
 # Creating kinesis data stream service

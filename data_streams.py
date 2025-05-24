@@ -10,7 +10,7 @@ logger = logging.getLogger("CSV file to Kinesis Data Streams")
 
 class GlobalVariables():
     csv_file_path = './iris.csv'
-    kinesis_client = boto3.client('kinesis', region_name='eu-central-1')
+    kinesis_client = boto3.client('kinesis', region_name='us-east-1')
 
 
 def define_arguments():
@@ -22,7 +22,6 @@ def define_arguments():
     parser.add_argument("--interval", "-i", type=int, required=True, help="Time interval (in seconds) between two writes")
     parser.add_argument("--max_rows", "-mr", type=int, default=150, help="Maximum number of rows to write (max: 150)")
     args = parser.parse_args()
-
     return args
 
 
