@@ -1,6 +1,6 @@
 # Creating a S3 bucket for storing the processe records
 resource "aws_s3_bucket" "kinesis_s3_bucket" {
-  bucket = "madmax-kinesis"
+  bucket        = "madmax-kinesis"
   force_destroy = true
 }
 
@@ -78,7 +78,7 @@ resource "aws_kinesis_firehose_delivery_stream" "firehose_to_s3" {
     bucket_arn         = aws_s3_bucket.kinesis_s3_bucket.arn
     buffering_size     = 5
     buffering_interval = 300
-    compression_format = "GZIP"
+    compression_format = "ZIP"
   }
 
   kinesis_source_configuration {
